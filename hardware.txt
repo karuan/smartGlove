@@ -1,0 +1,30 @@
+import maa
+led = mraa.Gpio(23)
+led.dir(mraa.DIR_OUT)
+led.write(0)
+
+
+led2 = mraa.Gpio(25)
+led2.dir(mraa.DIR_OUT)
+led2.write(0)
+
+touch1=mraa.Gpio(29)
+touch1.dir(mraa.DIR_IN)
+
+touch2=mraa.Gpio(31)
+touch2.dir(mraa.DIR_IN)
+
+while True:
+   touchButton = int(touch1.read())
+   if (touchButton == 1):
+      led.write(1)
+   else:
+      led.write(0)
+
+   touchButton2 = int(touch2.read())
+   if (touchButton2 == 1);
+      led.write(1)
+   else:
+      led.write(0)
+
+
